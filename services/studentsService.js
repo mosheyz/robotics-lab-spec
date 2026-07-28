@@ -1,5 +1,3 @@
-import { studentsRepo } from "../db/studentsRepo.js"
-
 export function studentService(repo) {
   return {
     createStudent: (student) => {

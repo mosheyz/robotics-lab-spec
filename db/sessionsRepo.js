@@ -23,8 +23,8 @@ export const sessionsRepo = {
         .eq("id", sessionId)
 
       if (error) throw error
-      if (!data) {
-        const err = new Error = "not found"
+      if (!data || data.length === 0) {
+        const err = new Error ("not found")
         err.status = 404
         throw err
       }

@@ -1,3 +1,4 @@
 robotics-lab-spec.md
 node_modules/
 package-lock.json
+.env
