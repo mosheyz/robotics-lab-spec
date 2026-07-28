@@ -1,6 +1,4 @@
 import { createClient } from '@supabase/supabase-js';
-import "dotenv/config"
-
 
 const { SUPABASE_PUBLISHABLE_KEY, SUPABASE_URL } = process.env
 
