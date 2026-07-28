@@ -3,8 +3,7 @@ import { students } from '../db/students.js';
 import { ObjectId } from 'mongodb';
 
 
-const studentsRepo = (students) => {
-  return {
+export const studentsRepo = {
     create: async (student) => {
         const result = await students.insertOne(student)
         return result.insertedId.toString()
@@ -12,6 +11,11 @@ const studentsRepo = (students) => {
 
     findById: async (id) => {
       const student = await students.findOne({ _id: new ObjectId(id) })
+      if (!student) {
+        const err = new Error("not found")
+        err.status = 404
+        throw err
+      }
       return student
     },
 
@@ -22,4 +26,3 @@ const studentsRepo = (students) => {
       return result.modifiedCount;
     }
   }
-}
