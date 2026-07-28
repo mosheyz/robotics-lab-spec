@@ -1,0 +1,10 @@
+services:
+  app:
+    image: node:26-alpine3.24
+    container_name: moysh
+    volumes:
+      - ./data:/data
+    
+    env_file:
+      - .env
+    
